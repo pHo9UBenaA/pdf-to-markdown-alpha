@@ -4,8 +4,10 @@ services:
       context: .
       dockerfile: docker/python/Dockerfile
     volumes:
-      - ./scripts:/app/scripts:ro
+      - ./docs/input:/app/docs/input:ro
+      - ./scripts:/app/scripts
       - ./pyproject.toml:/app/pyproject.toml
       - ./uv.lock:/app/uv.lock
+      - ./docs/output:/app/docs/output
     working_dir: /app/scripts
     tty: true
