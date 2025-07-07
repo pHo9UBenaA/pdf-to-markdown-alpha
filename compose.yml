@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/python/Dockerfile
+    volumes:
+      - ./scripts:/app/scripts:ro
+      - ./pyproject.toml:/app/pyproject.toml
+      - ./uv.lock:/app/uv.lock
+    working_dir: /app/scripts
+    tty: true
