@@ -1,12 +1,32 @@
 [project]
-name = "my-python-script-template"
+name = "pdf-to-markdown-alpha"
 version = "0.1.0"
-description = ""
+description = "Convert PDF files to Markdown using PyMuPDF and markdownify"
 readme = "README.md"
 requires-python = ">=3.13"
+authors = [
+    {name = "pHo9UBenaA", email = "102408484+pHo9UBenaA@users.noreply.github.com"},
+]
 dependencies = [
     "markdownify>=1.1.0",
     "pymupdf>=1.26.3",
     "requests>=2.32.3",
     "ruff>=0.12.2",
 ]
+
+[project.scripts]
+pdf-to-markdown = "src.converter:main"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+disallow_any_unimported = true
+disallow_any_expr = true
+disallow_any_decorated = true
+disallow_any_explicit = true
+warn_redundant_casts = true
+# 取り急ぎstudsで対応
+mypy_path = "stubs"
