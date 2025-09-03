@@ -5,9 +5,9 @@ services:
       dockerfile: docker/python/Dockerfile
     volumes:
       - ./docs/input:/app/docs/input:ro
-      - ./scripts:/app/scripts
+      - ./src:/app/src
       - ./pyproject.toml:/app/pyproject.toml
       - ./uv.lock:/app/uv.lock
       - ./docs/output:/app/docs/output
-    working_dir: /app/scripts
+    working_dir: /app/src
     tty: true

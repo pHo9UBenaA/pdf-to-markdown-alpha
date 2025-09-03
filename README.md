@@ -17,7 +17,7 @@ docker compose up -d
 To convert a PDF file to Markdown, use the following command:
 
 ```
-docker compose exec -w /app app uv run scripts/convert_pdf.py docs/input/sample.pdf
+docker compose exec -w /app app uv run src/convert_pdf.py docs/input/sample.pdf
 ```
 
 - To disable image extraction, add the `--disable-image` option:
